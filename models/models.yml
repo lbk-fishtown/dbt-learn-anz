@@ -1,0 +1,29 @@
+version: 2
+
+models:
+    - name: customers
+      description: One record per customer
+      columns:
+        - name: customer_id
+          description: unique identifier for each customer
+          tests:
+            - not_null
+            - unique
+        - name: lifetime_value
+          description: total spend for a customer over their lifetime with our business.
+
+    - name: orders
+      description: One record per order
+      columns:
+        - name: customer_id
+          tests:
+            - not_null
+            - unique:
+                config:
+                    store_failures: true
+                    severity: warn
+
+    - name: stg_orders
+      columns:
+        - name: status
+          description: "{{ doc('order_status') }}"

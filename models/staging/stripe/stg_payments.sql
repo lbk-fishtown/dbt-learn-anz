@@ -3,7 +3,6 @@ select
     -- makes it easier to work with later
     id as payment_id,
     orderid as order_id,
-
     paymentmethod,
     status,
     amount,

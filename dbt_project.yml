@@ -25,6 +25,10 @@ clean-targets:         # directories to be removed by `dbt clean`
     - "dbt_modules"
 
 
+on-run-end:
+  - "{{ store_test_results(results) }}"
+
+
 # Configuring models
 # Full documentation: https://docs.getdbt.com/docs/configuring-models
 

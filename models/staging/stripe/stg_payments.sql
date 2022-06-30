@@ -1,5 +1,4 @@
 select 
-    
     -- align id columns to rest of project
     -- makes it easier to work with later
     id as payment_id,

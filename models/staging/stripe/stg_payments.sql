@@ -9,4 +9,4 @@ select
     amount,
     created,
     _batched_at
-from {{ source('stripe', 'payments') }}
+from {{ source('stripe', 'payment') }}
